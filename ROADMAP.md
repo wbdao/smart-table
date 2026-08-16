@@ -18,7 +18,7 @@ vanilla, React, Vue, Angular and Web Components.
 | Phase 5 | Monorepo, React/Vue/Angular, docs, playground, storybook, CI/CD  | done        |
 | Phase 6 | Plugin marketplace, Web Components                               | done        |
 | Phase 7 | Beta release, adoption, enterprise integrations                  | done        |
-| Phase 8 | `v1.0.0` release — API freeze, enterprise hardening              | not started |
+| Phase 8 | `v1.0.0` release — API freeze, enterprise hardening              | in progress |
 
 ## Versioning strategy
 
@@ -29,6 +29,8 @@ vanilla, React, Vue, Angular and Web Components.
   `0.x` minor bumps may introduce breakage with clear migration notes.
 - `v1.0.0` is the API-freeze release; after it, breaking changes only in
   major versions.
+
+Version 0.9.0-beta is a deliberate alignment release representing completion of Phases 1–7 and is not the result of incremental semver progression from 0.1.x.
 
 ## Phase 7 — Beta release & enterprise foundations
 
@@ -48,6 +50,15 @@ vanilla, React, Vue, Angular and Web Components.
 | [x] 7.12  | v1.0 readiness → `RELEASE_CHECKLIST.md`                                           |
 
 Details and success criteria: [`docs/PHASE_7.md`](docs/PHASE_7.md).
+
+## Phase 8 — v1.0.0 release
+
+| Milestone | Deliverables                                                                                                                                                                      |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [x] 8.1   | Git init + baseline & alignment commits; 12-package `fixed` group; prerelease `beta` mode; `0.9.0-beta` alignment; CHANGELOGs; `pnpm check:versions` drift guard; all gates green |
+| [ ] 8.2   | API freeze — classify and lock the public surface (`API_STABILITY.md` frozen)                                                                                                     |
+| [ ] 8.3+  | Enterprise hardening: CI gates, coverage, a11y, security, docs/migration content                                                                                                  |
+| [ ] 8.10  | `v1.0.0` cut — `changeset pre exit`, full gates, explicit alignment + publish                                                                                                     |
 
 ## v1.0 Definition of Done
 

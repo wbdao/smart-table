@@ -1,6 +1,6 @@
 {
   "name": "@smart-table/angular",
-  "version": "0.1.0",
+  "version": "0.9.0-beta",
   "description": "Angular adapter for SmartTableJS — a standalone component over the headless core.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -31,7 +31,7 @@
   },
   "peerDependencies": {
     "@angular/core": ">=17",
-    "@smart-table/core": ">=0.1.0"
+    "@smart-table/core": ">=0.9.0-beta"
   },
   "scripts": {
     "build": "vite build",

@@ -1,6 +1,6 @@
 {
   "name": "@smart-table/security",
-  "version": "0.1.0-beta",
+  "version": "0.9.0-beta",
   "description": "Role-based authorization for SmartTableJS — declarative roles, permission inheritance and a write guard.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -32,7 +32,7 @@
     "node": ">=18"
   },
   "peerDependencies": {
-    "@smart-table/core": ">=0.1.0"
+    "@smart-table/core": ">=0.9.0-beta"
   },
   "scripts": {
     "build": "vite build",

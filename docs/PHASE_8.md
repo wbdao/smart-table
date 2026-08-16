@@ -23,17 +23,17 @@ changelogs, and migration guidance.
 
 ## v1.0 Definition of Done (from `ROADMAP.md`) → Phase 8 milestone
 
-| DoD item                                            | Covered by            |
-| --------------------------------------------------- | --------------------- |
-| Public API classified and frozen                    | 8.2                   |
-| Migration guide for every adapter + AG Grid layer   | 8.8                   |
-| Accessibility audit passed (WCAG 2.2 AA)            | 8.5                   |
-| Performance certification published                 | 8.9                   |
-| Security review passed; reporting live              | 8.6                   |
-| Plugin compatibility verified (stable + experimental)| 8.7                   |
-| Adapters verified: React 18+, Vue 3, Angular 17+, Web | 8.7                 |
-| Coverage ≥ 90% on new foundations                   | 8.4                   |
-| `RELEASE_CHECKLIST.md` fully green                  | 8.1, 8.4, 8.10        |
+| DoD item                                              | Covered by     |
+| ----------------------------------------------------- | -------------- |
+| Public API classified and frozen                      | 8.2            |
+| Migration guide for every adapter + AG Grid layer     | 8.8            |
+| Accessibility audit passed (WCAG 2.2 AA)              | 8.5            |
+| Performance certification published                   | 8.9            |
+| Security review passed; reporting live                | 8.6            |
+| Plugin compatibility verified (stable + experimental) | 8.7            |
+| Adapters verified: React 18+, Vue 3, Angular 17+, Web | 8.7            |
+| Coverage ≥ 90% on new foundations                     | 8.4            |
+| `RELEASE_CHECKLIST.md` fully green                    | 8.1, 8.4, 8.10 |
 
 ## Milestones (execution order)
 
@@ -271,18 +271,18 @@ Risk: medium (first public release). Impact: **highest**.
 
 ## Priority matrix
 
-| # | Milestone      | Impact | Risk | Effort | Release-readiness impact | Why this slot          |
-| - | -------------- | ------ | ---- | ------ | ------------------------ | ---------------------- |
-| 1 | 8.1 Foundations | high  | low–med | S | **enabler** (changelogs, publish) | unblocks everything    |
-| 2 | 8.2 API freeze | highest | **high** | M | **freezes the contract** | decisions cascade      |
-| 3 | 8.3 Stabilize  | high  | med  | L | ships the 1.0 surface    | depends on 8.2         |
-| 4 | 8.4 CI gates   | high  | low  | M | makes DoD enforceable    | needs stable code       |
-| 5 | 8.5 A11y       | high  | med  | M | DoD / enterprise blocker | parallel after 8.4     |
-| 6 | 8.6 Security   | high  | med  | M | DoD / trust              | parallel after 8.4     |
-| 7 | 8.7 Compat     | high  | low–med | M | DoD verification         | after 8.2/8.3          |
-| 8 | 8.8 Docs       | high  | low  | L | release readiness         | after 8.2/8.3          |
-| 9 | 8.9 Perf       | med   | low  | S | certification + budget    | after 8.4              |
-| 10| 8.10 Release   | highest | med | S | ships v1.0.0              | last                   |
+| #   | Milestone       | Impact  | Risk     | Effort | Release-readiness impact          | Why this slot       |
+| --- | --------------- | ------- | -------- | ------ | --------------------------------- | ------------------- |
+| 1   | 8.1 Foundations | high    | low–med  | S      | **enabler** (changelogs, publish) | unblocks everything |
+| 2   | 8.2 API freeze  | highest | **high** | M      | **freezes the contract**          | decisions cascade   |
+| 3   | 8.3 Stabilize   | high    | med      | L      | ships the 1.0 surface             | depends on 8.2      |
+| 4   | 8.4 CI gates    | high    | low      | M      | makes DoD enforceable             | needs stable code   |
+| 5   | 8.5 A11y        | high    | med      | M      | DoD / enterprise blocker          | parallel after 8.4  |
+| 6   | 8.6 Security    | high    | med      | M      | DoD / trust                       | parallel after 8.4  |
+| 7   | 8.7 Compat      | high    | low–med  | M      | DoD verification                  | after 8.2/8.3       |
+| 8   | 8.8 Docs        | high    | low      | L      | release readiness                 | after 8.2/8.3       |
+| 9   | 8.9 Perf        | med     | low      | S      | certification + budget            | after 8.4           |
+| 10  | 8.10 Release    | highest | med      | S      | ships v1.0.0                      | last                |
 
 Recommended execution: **8.1 → 8.2 → 8.3** strictly sequential; **8.5 / 8.6 /
 8.7** in parallel after 8.4; **8.8 / 8.9** in parallel; **8.10** last.

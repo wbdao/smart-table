@@ -1,6 +1,6 @@
 {
   "name": "@smart-table/react",
-  "version": "0.1.0",
+  "version": "0.9.0-beta",
   "description": "React adapter for SmartTableJS — hooks and components over the headless core.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -30,7 +30,7 @@
     "node": ">=18"
   },
   "peerDependencies": {
-    "@smart-table/core": ">=0.1.0",
+    "@smart-table/core": ">=0.9.0-beta",
     "react": ">=18"
   },
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "@smart-table/core",
-  "version": "0.1.0",
+  "version": "0.9.0-beta",
   "description": "Framework-agnostic, high-performance data table core: editing, sorting, filtering, virtualization, server data, grouping, tree, pivot and more.",
   "type": "module",
   "main": "./dist/index.cjs",

@@ -28,7 +28,8 @@
     "performance:dev": "pnpm --filter @smart-table/performance dev",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "check:versions": "node scripts/check-versions.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.0",

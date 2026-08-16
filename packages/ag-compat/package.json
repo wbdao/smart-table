@@ -1,6 +1,6 @@
 {
   "name": "@smart-table/ag-compat",
-  "version": "0.1.0-beta",
+  "version": "0.9.0-beta",
   "description": "AG Grid compatibility layer for SmartTableJS — migrate columnDefs, rowData and basic sorting/filtering.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -31,7 +31,7 @@
     "node": ">=18"
   },
   "peerDependencies": {
-    "@smart-table/core": ">=0.1.0"
+    "@smart-table/core": ">=0.9.0-beta"
   },
   "scripts": {
     "build": "vite build",

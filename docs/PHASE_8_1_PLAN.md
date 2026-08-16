@@ -1,25 +1,25 @@
 # Phase 8.1 — Git & version alignment (implementation plan)
 
-Status: **plan, not yet executed.** Phase 8.1 brings the monorepo to a single
+Status: **executed (align 8.1).** Phase 8.1 brought the monorepo to a single
 publishable baseline (`v0.9.0-beta`) on real git history so every downstream
 8.x deliverable (changelogs, `changeset status`, publish dry-run, release
-simulation) is unblocked. No public API changes are made.
+simulation) is unblocked. No public API changes were made.
 
 ---
 
 ## 1. Repository audit report
 
-| Area                          | Finding                                                          |
-| ----------------------------- | ---------------------------------------------------------------- |
-| Workspace                     | pnpm 11.21.0; `packages/*`, `apps/*`, `examples/*`               |
-| Publishable packages          | 12 (`@smart-table/*` under `packages/`), all `access: public`, `files: ["dist"]` |
-| Private apps                  | 5 (`docs`, `performance`, `playground`, `storybook`, `www`) — correctly ignored by changesets |
-| `examples/`                   | Only `README.md` (no workspace packages) — no publishable surface |
-| Changelogs                    | None exist anywhere                                              |
-| `.npmrc`                      | None (registry/auth default; publish relies on `NPM_TOKEN` + `access: public`) |
-| Scripts                       | `scripts/measure-perf.mjs` (perf harness)                        |
-| Quality gates                 | Green at Phase 7 close: typecheck, lint, test, build, bench, format:check, docs:build, www:build |
-| Root `package.json`           | `private: true`, version `0.0.0` — not publishable, no change    |
+| Area                 | Finding                                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------ |
+| Workspace            | pnpm 11.21.0; `packages/*`, `apps/*`, `examples/*`                                               |
+| Publishable packages | 12 (`@smart-table/*` under `packages/`), all `access: public`, `files: ["dist"]`                 |
+| Private apps         | 5 (`docs`, `performance`, `playground`, `storybook`, `www`) — correctly ignored by changesets    |
+| `examples/`          | Only `README.md` (no workspace packages) — no publishable surface                                |
+| Changelogs           | None exist anywhere                                                                              |
+| `.npmrc`             | None (registry/auth default; publish relies on `NPM_TOKEN` + `access: public`)                   |
+| Scripts              | `scripts/measure-perf.mjs` (perf harness)                                                        |
+| Quality gates        | Green at Phase 7 close: typecheck, lint, test, build, bench, format:check, docs:build, www:build |
+| Root `package.json`  | `private: true`, version `0.0.0` — not publishable, no change                                    |
 
 ## 2. Git readiness report
 
@@ -45,11 +45,11 @@ then a second commit carrying the 8.1 alignment (below) once gates re-pass.
   `fixed` group.
 - Pending (never-consumed) changesets — 3 files:
 
-  | File | Bumps |
-  | ---- | ----- |
-  | `phase5-ecosystem-release.md` | core, react, vue, angular → **minor** |
-  | `phase6-plugin-marketplace.md` | core, web → **minor** |
-  | `phase7-beta-release.md` | 7 foundation packages → **minor**; core → **patch** |
+  | File                           | Bumps                                               |
+  | ------------------------------ | --------------------------------------------------- |
+  | `phase5-ecosystem-release.md`  | core, react, vue, angular → **minor**               |
+  | `phase6-plugin-marketplace.md` | core, web → **minor**                               |
+  | `phase7-beta-release.md`       | 7 foundation packages → **minor**; core → **patch** |
 
 - If consumed by `changeset version` today they would emit `0.2.0`-family
   versions from the `0.1.0` base — **not** `0.9.0-beta`. Changesets cannot
@@ -59,20 +59,20 @@ then a second commit carrying the 8.1 alignment (below) once gates re-pass.
 
 ## 4. Package version inventory & drift
 
-| Package                 | Current     | Target      | Peer `@smart-table/core` |
-| ----------------------- | ----------- | ----------- | ------------------------ |
-| `@smart-table/core`     | `0.1.0`     | `0.9.0-beta`| —                        |
-| `@smart-table/react`    | `0.1.0`     | `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/vue`      | `0.1.0`     | `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/angular`  | `0.1.0`     | `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/web`      | `0.1.0`     | `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/ag-compat`| `0.1.0-beta`| `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/tanstack` | `0.1.0-beta`| `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/telemetry`| `0.1.0-beta`| `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/devtools` | `0.1.0-beta`| `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/collaboration` | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`            |
-| `@smart-table/charts`   | `0.1.0-beta`| `0.9.0-beta`| `>=0.1.0`                |
-| `@smart-table/security` | `0.1.0-beta`| `0.9.0-beta`| `>=0.1.0`                |
+| Package                      | Current      | Target       | Peer `@smart-table/core` |
+| ---------------------------- | ------------ | ------------ | ------------------------ |
+| `@smart-table/core`          | `0.1.0`      | `0.9.0-beta` | —                        |
+| `@smart-table/react`         | `0.1.0`      | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/vue`           | `0.1.0`      | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/angular`       | `0.1.0`      | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/web`           | `0.1.0`      | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/ag-compat`     | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/tanstack`      | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/telemetry`     | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/devtools`      | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/collaboration` | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/charts`        | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`                |
+| `@smart-table/security`      | `0.1.0-beta` | `0.9.0-beta` | `>=0.1.0`                |
 
 **Drift:** three distinct version families (`0.1.0`, `0.1.0-beta`, `0.0.0`
 root/private apps). All 12 publishable packages must converge on `0.9.0-beta`
@@ -118,17 +118,17 @@ cut points set at release time; changesets governs the increments between them.
 
 ## 6. Required configuration changes (exact files)
 
-| # | File | Change |
-| - | ---- | ------ |
-| 1 | `.changeset/config.json` | Add the `fixed` group from §5 |
-| 2 | `packages/{core,react,vue,angular,web,ag-compat,tanstack,telemetry,devtools,collaboration,charts,security}/package.json` (12 files) | `version` → `0.9.0-beta` |
-| 3 | Same 11 files (all except `core`) | `peerDependencies["@smart-table/core"]` → `>=0.9.0-beta` |
-| 4 | `pnpm-lock.yaml` | Regenerate via `pnpm install`; commit |
-| 5 | `packages/*/CHANGELOG.md` (12 new files) | `0.9.0-beta` entry, folded **verbatim** from the 3 phase summaries |
-| 6 | `.changeset/phase5-ecosystem-release.md`, `phase6-plugin-marketplace.md`, `phase7-beta-release.md` | Delete after folding (§7) |
-| 7 | `.changeset/pre.json` | Created by `changeset pre enter beta` |
-| 8 | `docs/RELEASING.md` | Remove the "Missing git history" blocker; document git init + fixed group + prerelease mode |
-| 9 | `docs/PHASE_8_1_PLAN.md` (this file) + `ROADMAP.md` | Record the cut; ROADMAP: note 8.1 delivered (Phase 8 table) |
+| #   | File                                                                                                                                | Change                                                                                      |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 1   | `.changeset/config.json`                                                                                                            | Add the `fixed` group from §5                                                               |
+| 2   | `packages/{core,react,vue,angular,web,ag-compat,tanstack,telemetry,devtools,collaboration,charts,security}/package.json` (12 files) | `version` → `0.9.0-beta`                                                                    |
+| 3   | Same 11 files (all except `core`)                                                                                                   | `peerDependencies["@smart-table/core"]` → `>=0.9.0-beta`                                    |
+| 4   | `pnpm-lock.yaml`                                                                                                                    | Regenerate via `pnpm install`; commit                                                       |
+| 5   | `packages/*/CHANGELOG.md` (12 new files)                                                                                            | `0.9.0-beta` entry, folded **verbatim** from the 3 phase summaries                          |
+| 6   | `.changeset/phase5-ecosystem-release.md`, `phase6-plugin-marketplace.md`, `phase7-beta-release.md`                                  | Delete after folding (§7)                                                                   |
+| 7   | `.changeset/pre.json`                                                                                                               | Created by `changeset pre enter beta`                                                       |
+| 8   | `docs/RELEASING.md`                                                                                                                 | Remove the "Missing git history" blocker; document git init + fixed group + prerelease mode |
+| 9   | `docs/PHASE_8_1_PLAN.md` (this file) + `ROADMAP.md`                                                                                 | Record the cut; ROADMAP: note 8.1 delivered (Phase 8 table)                                 |
 
 No `src/` changes → **no public API modification** (verifiable via
 `git diff` on the alignment commit).
@@ -149,15 +149,15 @@ No `src/` changes → **no public API modification** (verifiable via
 
 ## 8. Risks & mitigations
 
-| Risk | Likelihood | Mitigation |
-| ---- | ---------- | ---------- |
-| Manual alignment diverges from changesets math (can't reach `0.9.0-beta` from `0.1.0`) | Certain | Milestone labels are explicit cut points; pre-mode + fixed group govern increments between cuts |
-| Wrong pre-release suffix (`0.9.0-beta.0` vs `beta-0`) | Medium | Pre-mode uses `-beta.N`; dist-tag is `beta` either way; documented in `docs/RELEASING.md` |
-| Lockfile/version mismatch breaks `--frozen-lockfile` | Low | Regenerate lockfile in step 4; verify in step 8 |
-| Unwanted files staged on first commit | Low | `.gitignore` already covers; verify with `git status --porcelain` |
-| Losing Phase 5/6/7 release history | Low | Summaries folded verbatim into `CHANGELOG.md`; full narrative stays in `docs/PHASE_{5,6,7}.md` |
-| `fixed` group accidentally includes ignored/private packages | Low | Group lists exactly the 12 publishable packages; apps stay in `ignore` |
-| New contributors confused by `0.9.0-beta` | Low | `ROADMAP.md`/`SUPPORTED_VERSIONS.md` already frame the beta milestone; alignment documented in `docs/RELEASING.md` |
+| Risk                                                                                   | Likelihood | Mitigation                                                                                                         |
+| -------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| Manual alignment diverges from changesets math (can't reach `0.9.0-beta` from `0.1.0`) | Certain    | Milestone labels are explicit cut points; pre-mode + fixed group govern increments between cuts                    |
+| Wrong pre-release suffix (`0.9.0-beta.0` vs `beta-0`)                                  | Medium     | Pre-mode uses `-beta.N`; dist-tag is `beta` either way; documented in `docs/RELEASING.md`                          |
+| Lockfile/version mismatch breaks `--frozen-lockfile`                                   | Low        | Regenerate lockfile in step 4; verify in step 8                                                                    |
+| Unwanted files staged on first commit                                                  | Low        | `.gitignore` already covers; verify with `git status --porcelain`                                                  |
+| Losing Phase 5/6/7 release history                                                     | Low        | Summaries folded verbatim into `CHANGELOG.md`; full narrative stays in `docs/PHASE_{5,6,7}.md`                     |
+| `fixed` group accidentally includes ignored/private packages                           | Low        | Group lists exactly the 12 publishable packages; apps stay in `ignore`                                             |
+| New contributors confused by `0.9.0-beta`                                              | Low        | `ROADMAP.md`/`SUPPORTED_VERSIONS.md` already frame the beta milestone; alignment documented in `docs/RELEASING.md` |
 
 ## 9. Definition of Done — Phase 8.1
 

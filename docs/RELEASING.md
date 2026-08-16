@@ -12,8 +12,11 @@ public beta milestone.
 - **Changesets** drive every version: contributors add a changeset, maintainers
   run `pnpm changeset version` (bumps + generates `CHANGELOG.md`), then
   `pnpm release` (`changeset publish`).
-- Missing git history today blocks `changeset status` (red checkbox) — solve by
-  initializing git properly before the first beta cut.
+- Git history is initialized on `main` (Phase 8.1); `changeset status` resolves
+  against it. Milestone labels (`0.9.0-beta`, `1.0.0`) are explicit cut points
+  set at release time; changesets governs the increments between them.
+
+Version 0.9.0-beta is a deliberate alignment release representing completion of Phases 1–7 and is not the result of incremental semver progression from 0.1.x.
 
 ## Release channels & dist-tags
 
@@ -43,6 +46,23 @@ All of the following must pass to cut the beta:
       audit, adapter verification).
 - [ ] Full gates green: `pnpm typecheck && pnpm lint && pnpm test &&
 pnpm build && pnpm bench`.
+
+## Version & release infrastructure (Phase 8.1)
+
+- **Git history**: initialized on `main`; the verified Phase 7 tree is the
+  baseline commit and the 8.1 alignment is the second commit. `changeset
+status` now resolves cleanly.
+- **Fixed group**: `.changeset/config.json` lists the 12 publishable packages
+  in a single `fixed` group, so any future changeset bump moves them all to the
+  same version (drift is impossible). Private apps (`docs`, `playground`,
+  `storybook`, `performance`, `www`) stay in `ignore`.
+- **Prerelease mode**: `.changeset/pre.json` is active with tag `beta` (entered
+  via `pnpm changeset pre enter beta`). Subsequent snapshots version as
+  `0.9.0-beta.N` instead of jumping numerically. Before the `v1.0.0` cut run
+  `pnpm changeset pre exit`, then cut `v1.0.0` as the explicit final alignment
+  (same pattern as this milestone).
+- **Version drift guard**: `pnpm check:versions` fails if any publishable
+  package version differs from the unified version.
 
 ## Deprecation policy (pre-1.0)
 

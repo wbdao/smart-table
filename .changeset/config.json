@@ -2,7 +2,22 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "fixed": [],
+  "fixed": [
+    [
+      "@smart-table/core",
+      "@smart-table/react",
+      "@smart-table/vue",
+      "@smart-table/angular",
+      "@smart-table/web",
+      "@smart-table/ag-compat",
+      "@smart-table/tanstack",
+      "@smart-table/telemetry",
+      "@smart-table/devtools",
+      "@smart-table/collaboration",
+      "@smart-table/charts",
+      "@smart-table/security"
+    ]
+  ],
   "linked": [],
   "access": "public",
   "baseBranch": "main",

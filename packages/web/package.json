@@ -1,6 +1,6 @@
 {
   "name": "@smart-table/web",
-  "version": "0.1.0",
+  "version": "0.9.0-beta",
   "description": "Web Components binding for SmartTableJS — a framework-free <smart-table> element over the headless core.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -31,7 +31,7 @@
     "node": ">=18"
   },
   "peerDependencies": {
-    "@smart-table/core": ">=0.1.0"
+    "@smart-table/core": ">=0.9.0-beta"
   },
   "scripts": {
     "build": "vite build",
