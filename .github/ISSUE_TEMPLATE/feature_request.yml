@@ -1,0 +1,48 @@
+name: Feature request
+description: Propose a new capability or API for SmartTableJS.
+title: '[feat]: '
+labels: [kind:feature, needs-triage]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What real problem are you solving? Give a concrete scenario.
+      placeholder: Our team needs to … but SmartTable currently can't …
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the API/shape you envision. Include illustrative code.
+      render: typescript
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds or other libraries you looked at, and why they fall short.
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: What should own this?
+      options:
+        - '@smart-table/core'
+        - A new plugin (marketplace)
+        - A new package / adapter
+        - Documentation / website
+        - Tooling / DX
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checks
+      options:
+        - label: I checked the ROADMAP and existing issues for overlap
+          required: true
+        - label: I am willing to help implement this (sponsor / PR / feedback)
+          required: false

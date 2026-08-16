@@ -1,0 +1,134 @@
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: #f6f7fb;
+  color: #1f2430;
+}
+
+.playground {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+}
+
+.pg-header h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+}
+.pg-header h1 span {
+  color: #4f46e5;
+  font-weight: 600;
+}
+.pg-header p {
+  margin: 0 0 18px;
+  color: #5b6272;
+}
+
+.pg-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-end;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #e3e6ee;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.pg-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5b6272;
+}
+
+.pg-controls select,
+.pg-tools textarea {
+  border: 1px solid #cbd2e0;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font: inherit;
+  background: #fff;
+}
+
+.pg-check {
+  flex-direction: row !important;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pg-stats {
+  margin-left: auto;
+  font-size: 13px;
+  color: #4f46e5;
+  font-variant-numeric: tabular-nums;
+}
+
+.pg-tools {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 14px 0;
+}
+
+.pg-tools button {
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pg-tools textarea {
+  flex: 1;
+  min-height: 44px;
+  resize: vertical;
+  font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+}
+
+.pg-table .st-root {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e3e6ee;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #12141c;
+    color: #e7e9f0;
+  }
+  .pg-controls,
+  .pg-table .st-root {
+    background: #1a1d27;
+    border-color: #2b3040;
+  }
+  .pg-controls label,
+  .pg-header p {
+    color: #a6acbb;
+  }
+  .pg-controls select,
+  .pg-tools textarea {
+    background: #232838;
+    border-color: #39415c;
+    color: #e7e9f0;
+  }
+}

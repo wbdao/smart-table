@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": [
+    "@smart-table/docs",
+    "@smart-table/playground",
+    "@smart-table/storybook",
+    "@smart-table/performance",
+    "@smart-table/www"
+  ]
+}

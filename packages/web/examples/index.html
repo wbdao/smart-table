@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@smart-table/web example</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #f6f7f9;
+        color: #111827;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 28px 20px 64px;
+      }
+      .controls {
+        display: flex;
+        gap: 14px;
+        margin: 14px 0;
+        font-size: 13px;
+      }
+      smart-table {
+        display: block;
+        height: 520px;
+      }
+      #events {
+        margin-top: 12px;
+        font-size: 12px;
+        color: #6b7280;
+        font-family: ui-monospace, monospace;
+        white-space: pre-wrap;
+        max-height: 140px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>@smart-table/web — <code>&lt;smart-table&gt;</code></h1>
+      <div class="controls">
+        <label
+          >Theme
+          <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="corporate">Corporate</option>
+          </select>
+        </label>
+        <label
+          >Rows / page
+          <select id="page-size">
+            <option value="10">10</option>
+            <option value="50" selected>50</option>
+            <option value="0">All</option>
+          </select>
+        </label>
+      </div>
+
+      <smart-table id="orders" theme="light" page-size="50" editable context-menu></smart-table>
+
+      <div id="events">Events will appear here…</div>
+    </div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

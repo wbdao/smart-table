@@ -1,0 +1,44 @@
+{
+  "name": "smart-table-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "SmartTableJS monorepo — core library plus framework adapters, docs, playground and tooling.",
+  "type": "module",
+  "packageManager": "pnpm@11.21.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint .",
+    "test": "pnpm -r test",
+    "build": "pnpm -r build",
+    "bench": "pnpm --filter @smart-table/core bench",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docs:dev": "pnpm --filter @smart-table/docs dev",
+    "docs:build": "pnpm --filter @smart-table/docs build",
+    "www:dev": "pnpm --filter @smart-table/www dev",
+    "www:build": "pnpm --filter @smart-table/www build",
+    "www:preview": "pnpm --filter @smart-table/www preview",
+    "playground:dev": "pnpm --filter @smart-table/playground dev",
+    "playground:build": "pnpm --filter @smart-table/playground build",
+    "storybook": "pnpm --filter @smart-table/storybook storybook",
+    "storybook:build": "pnpm --filter @smart-table/storybook build",
+    "performance:dev": "pnpm --filter @smart-table/performance dev",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.0",
+    "@types/node": "^22.15.0",
+    "eslint": "^9.30.0",
+    "eslint-config-prettier": "^10.1.0",
+    "prettier": "^3.5.0",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.30.0",
+    "@changesets/cli": "^2.28.1"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,38 @@
+name: Question
+description: Ask how to do something with SmartTableJS.
+title: '[question]: '
+labels: [kind:question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions and "how do I…" posts are better served by **GitHub Discussions**
+        (category *Q&A*). This template is a fallback for maintainers and
+        short, highly specific questions. For anything discussable, please open
+        a Discussion instead: <https://github.com/smart-table-js/smart-table/discussions>.
+
+        Check the docs first: `apps/docs/guide/**`, `docs/PHASE_*.md`, and the
+        FAQ page.
+  - type: input
+    id: package
+    attributes:
+      label: Package & version
+      description: e.g. `@smart-table/react` `0.1.0`
+      placeholder: 'package + version'
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Be specific. Include the code you tried and the error, if any.
+      render: typescript
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checks
+      options:
+        - label: I read the relevant docs and the FAQ first
+          required: true

@@ -1,0 +1,94 @@
+name: Bug report
+description: Report a reproducible defect in a @smart-table package.
+title: '[bug]: '
+labels: [kind:bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report. Check [SUPPORTED_VERSIONS.md](../../SUPPORTED_VERSIONS.md) first — bugs on end-of-life versions are not fixed.
+  - type: dropdown
+    id: package
+    attributes:
+      label: Affected package
+      description: Which package exhibits the bug?
+      multiple: true
+      options:
+        - '@smart-table/core'
+        - '@smart-table/react'
+        - '@smart-table/vue'
+        - '@smart-table/angular'
+        - '@smart-table/web'
+        - '@smart-table/ag-compat'
+        - '@smart-table/tanstack'
+        - '@smart-table/telemetry'
+        - '@smart-table/devtools'
+        - '@smart-table/collaboration'
+        - '@smart-table/charts'
+        - '@smart-table/security'
+        - Other / unknown
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version(s)
+      description: e.g. `@smart-table/core@0.1.0-0`
+      placeholder: '0.1.0'
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Where does it happen? (check what applies)
+      multiple: true
+      options:
+        - Browser (Chrome)
+        - Browser (Firefox)
+        - Browser (Safari)
+        - Browser (Edge)
+        - Node.js (SSR / jsdom)
+        - React 18+
+        - Vue 3
+        - Angular 17+
+        - Vanilla JS
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Minimal repro. A small code snippet or a StackBlitz/repo link works best.
+      placeholder: |
+        const table = new SmartTable({ columns, data, ... });
+        table.setData(...); // bug appears after this
+      render: typescript
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happens? Paste errors/log output.
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checks
+      options:
+        - label: I read CONTRIBUTING.md and SUPPORTED_VERSIONS.md
+          required: true
+        - label: This is a bug, not a question (use Discussions for questions)
+          required: true
+        - label: I can reproduce this on the latest version
+          required: false

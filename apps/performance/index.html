@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartTableJS — Performance Lab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='7' fill='%23059069'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div id="app" class="perf">
+      <header class="perf-header">
+        <h1>SmartTableJS <span>performance lab</span></h1>
+        <p>
+          Head-to-head against AG Grid, Tabulator and Grid.js on an identical 7-column product
+          dataset.
+        </p>
+      </header>
+
+      <section class="perf-controls">
+        <label
+          >Rows
+          <select id="size">
+            <option value="1000">1,000</option>
+            <option value="10000" selected>10,000</option>
+            <option value="50000">50,000</option>
+          </select>
+        </label>
+        <button id="run" type="button">Run benchmark</button>
+        <span id="status" class="perf-status"></span>
+      </section>
+
+      <section id="results" class="perf-results"></section>
+      <section id="hosts" class="perf-hosts"></section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

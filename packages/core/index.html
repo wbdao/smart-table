@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartTableJS — Vanilla Demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        color: #1f2430;
+        background: #fafbfc;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h1 code {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #64748b;
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+      .controls button {
+        font: inherit;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .controls button:hover {
+        background: #f1f5f9;
+      }
+      #table {
+        margin: 1rem 0;
+      }
+      #output {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 1rem;
+        overflow: auto;
+      }
+      #output pre {
+        font-size: 12px;
+        line-height: 1.5;
+        margin: 0 0 0.5rem;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>SmartTableJS <code>— Phase 2 DOM renderer demo</code></h1>
+      <p>
+        Sort by clicking a header, search / copy / clone / add / mode from the toolbar, select rows,
+        double-click a cell to edit it, and resize the window to see the responsive card layout.
+      </p>
+      <div class="controls">
+        <button id="theme-light" type="button">Light theme</button>
+        <button id="theme-dark" type="button">Dark theme</button>
+        <button id="theme-corporate" type="button">Corporate theme</button>
+        <button id="theme-custom" type="button">Custom theme</button>
+        <button id="add-row" type="button">+ Add row</button>
+      </div>
+      <div id="table"></div>
+      <h1 style="font-size: 1rem">Event log</h1>
+      <div id="output"></div>
+    </main>
+    <script type="module" src="/examples/vanilla/main.ts"></script>
+  </body>
+</html>

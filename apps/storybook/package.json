@@ -1,0 +1,23 @@
+{
+  "name": "@smart-table/storybook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build": "storybook build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@smart-table/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.0",
+    "@storybook/addon-essentials": "^8.6.0",
+    "@storybook/html": "^8.6.0",
+    "@storybook/html-vite": "^8.6.0",
+    "storybook": "^8.6.0",
+    "typescript": "^5.8.0",
+    "vite": "^6.3.0"
+  }
+}

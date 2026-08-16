@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartTableJS Playground</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='7' fill='%234f46e5'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div id="app" class="playground">
+      <header class="pg-header">
+        <h1>SmartTableJS <span>playground</span></h1>
+        <p>Configure, poke and break it — state is persisted to localStorage.</p>
+      </header>
+
+      <section class="pg-controls">
+        <label
+          >Dataset
+          <select id="dataset"></select>
+        </label>
+        <label
+          >Theme
+          <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="corporate">Corporate</option>
+          </select>
+        </label>
+        <label
+          >Rows / page
+          <select id="page-size">
+            <option value="0">All</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+        <label
+          >Group by
+          <select id="group-field"></select>
+        </label>
+        <label class="pg-check"><input type="checkbox" id="editable" /> Editable</label>
+        <label class="pg-check"><input type="checkbox" id="virtualScroll" /> Virtual scroll</label>
+        <label class="pg-check"><input type="checkbox" id="responsive" /> Responsive</label>
+        <label class="pg-check"><input type="checkbox" id="contextMenu" /> Context menu</label>
+        <label class="pg-check"><input type="checkbox" id="tree" /> Tree</label>
+        <label class="pg-check"><input type="checkbox" id="aggregate" /> Aggregates</label>
+        <div id="stats" class="pg-stats"></div>
+      </section>
+
+      <div class="pg-tools">
+        <button id="export-state" type="button">Export state</button>
+        <button id="import-state" type="button">Import state</button>
+        <textarea
+          id="state-code"
+          rows="4"
+          placeholder='Paste exported state here, then click "Import state".'
+        ></textarea>
+      </div>
+
+      <main id="table-host" class="pg-table"></main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

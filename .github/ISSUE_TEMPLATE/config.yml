@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/smart-table-js/smart-table/discussions
+    about: Q&A, ideas, and show-and-tell belong in Discussions (see docs/COMMUNITY.md).
+  - name: Security issues
+    url: https://github.com/smart-table-js/smart-table/security/advisories/new
+    about: Please report vulnerabilities privately via GitHub Security Advisory, not a public issue.
